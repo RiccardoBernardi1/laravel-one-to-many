@@ -26,9 +26,21 @@
         @enderror
     </div>
     <div class="mb-3">
-        <label for="cover_image" class="form-label">cover_image</label>
+        <label for="cover_image" class="form-label">Image</label>
         <input class="form-control @error('cover_image') is-invalid @enderror" type="file" placeholder="cover_image" id="cover_image" name="cover_image" value="{{old('cover_image')}}">
         @error('cover_image')
+            <div class="alert alert-danger">{{ $message }}</div>
+        @enderror
+    </div>
+    <div class="mb-3">
+        <label for="type_id" class="form-label">Type</label>
+        <select class="form-select" name="type_id" id="type_id">
+            <option value="">No Type</option>
+            @foreach ($types as $type)
+                <option value="{{$type->id}}">{{$type->name}}</option>
+            @endforeach
+        </select>
+        @error('type_id')
             <div class="alert alert-danger">{{ $message }}</div>
         @enderror
     </div>
