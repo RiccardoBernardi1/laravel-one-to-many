@@ -18,8 +18,10 @@ class ProjectSeeder extends Seeder
      */
     public function run(Faker $faker)
     {
-        $type=Type::inRandomOrder()->first();
+        Project::truncate();
+        
         for($i=0;$i<10;$i++){
+            $type=Type::inRandomOrder()->first();
             $new_project= new Project();
             $new_project->name=$faker->sentence(3);
             $new_project->slug=Str::slug($new_project->name,'-');

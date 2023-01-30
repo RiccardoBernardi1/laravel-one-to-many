@@ -2,6 +2,11 @@
 
 @section('content')
 <h1 class="my-4">{{$project->name}}</h1>
+@if($project->type?->name)
+    <h3>Category: {{$project->type->name}}</h3>
+@else
+    <h3>No Category Associated</h3>
+@endif
 @if($project->cover_image)
     <img src="{{asset("storage/$project->cover_image")}}" alt="{{$project->name}}" class="w-25">
 @endif
