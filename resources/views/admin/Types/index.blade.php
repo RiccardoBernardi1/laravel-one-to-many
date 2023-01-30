@@ -12,8 +12,7 @@
         <tr>
             <th scope="col">#</th>
             <th scope="col">Name</th>
-            <th scope="col">Description</th>
-            <th scope="col">Customer</th>
+            <th scope="col">Slug</th>
             <th scope="col">Details</th>
             <th scope="col">Edit</th>
             <th scope="col">Delete</th>
@@ -24,8 +23,7 @@
             <tr>
                 <th scope="row">{{$type->id}}</th>
                 <td>{{$type->name}}</td>
-                <td>{{$type->description}}</td>
-                <td>{{$type->client}}</td>
+                <td>{{$type->slug}}</td>
                 <td>
                     <a href="{{route('admin.types.show',$type->slug)}}" class="btn btn-primary">Details</a>
                 </td>
